@@ -1,0 +1,47 @@
+﻿@model QuanLyCongTy.Models.ChucVu
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color:red">Bạn có thật sự muốn xóa?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã chức vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChucVuID)
+        </dd>
+
+        <dt>
+            Tên chức vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameChucVu)
+        </dd>
+
+        <dt>
+            Tên phòng ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhongBan.NamePhongBan)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
+    }
+</div>

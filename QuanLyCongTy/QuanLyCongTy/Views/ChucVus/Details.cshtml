@@ -1,0 +1,43 @@
+﻿@model QuanLyCongTy.Models.ChucVu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã chức vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChucVuID)
+        </dd>
+
+        <dt>
+            Tên chức vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameChucVu)
+        </dd>
+
+        <dt>
+            Tên phòng ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhongBan.NamePhongBan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ChucVuID.Trim() }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

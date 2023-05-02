@@ -1,0 +1,45 @@
+﻿@model QuanLyCongTy.Models.BaoCao
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tiêu đề
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            Nội dung
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.NoiDung)
+
+            @*@Html.DisplayFor(model => model.NoiDung)*@
+        </dd>
+
+        <dt>
+            Người lập báo cáo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.Id.Trim() }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>

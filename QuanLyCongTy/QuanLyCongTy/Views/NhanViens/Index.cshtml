@@ -1,0 +1,61 @@
+﻿@model IEnumerable<QuanLyCongTy.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách nhân viên</h2>
+
+<p>
+    @Html.ActionLink("Thêm nhân viên", "Create")
+</p>
+<table class="table">
+    <thead>
+
+    <tr>
+        <th>
+            Mã Nhân viên
+        </th>
+        <th>
+            Tên Nhân viên
+        </th>
+        <th>
+            Chức vụ
+        </th>
+        <th>
+            Phòng ban
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChucVu.NameChucVu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChucVu.PhongBan.NamePhongBan)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaNV.Trim() }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaNV.Trim() }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaNV.Trim() })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>

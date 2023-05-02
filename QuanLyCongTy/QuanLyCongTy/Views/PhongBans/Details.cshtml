@@ -1,0 +1,36 @@
+﻿@model QuanLyCongTy.Models.PhongBan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Phòng ban</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã phòng ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDPhongBan)
+        </dd>
+
+
+        <dt>
+            Tên phòng ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamePhongBan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.IDPhongBan }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
